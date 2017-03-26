@@ -13,8 +13,6 @@ defmodule Geom do
       :rectangle -> dim1 * dim2
       :triangle  -> dim1 * dim2 * 0.5
       :ellipse   -> dim1 * dim2 * :math.pi
-
-      
     end
   end
 end
