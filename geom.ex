@@ -7,7 +7,14 @@ defmodule Geom do
   @doc """
     Calculate the area of a geometric shape
   """
-  def area(:rectangle, length, width), do: length * width
-  def area(:triangle, base, height), do: base * height * 0.5
-  def area(:ellipse, radius1, radius2), do: :math.pi * radius1 * radius2
+  @spec area(atom, number, number) :: number
+  def area(:rectangle, length, width) when length > 0 and width > 0 do
+    length * width
+  end
+  def area(:triangle, base, height) when base > 0 and height > 0 do
+    base * height * 0.5
+  end
+  def area(:ellipse, radius1, radius2) when radius1 > 0 and radius2 > 0 do
+    :math.pi * radius1 * radius2
+  end
 end
