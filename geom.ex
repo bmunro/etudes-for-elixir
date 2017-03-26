@@ -5,11 +5,9 @@ defmodule Geom do
   """
 
   @doc """
-    Calculate the area of a rectangle
-
-    ## Parameters
-      - length: Length of the rectangle, default 1
-      - width:  Width of the rectangle, default 1
+    Calculate the area of a geometric shape
   """
-  def area(length \\ 1, width \\ 1), do: length * width
+  def area(:rectangle, length, width), do: length * width
+  def area(:triangle, base, height), do: base * height * 0.5
+  def area(:ellipse, radius1, radius2), do: :math.pi * radius1 * radius2
 end
